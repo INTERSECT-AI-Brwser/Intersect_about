@@ -181,20 +181,20 @@ const Sidebar = (
                 setIsHistoryView(true);
             }}><LuHistory className="text-2xl"/>
             </div>
-            <div className="w-12 h-12 rounded-md bg-slate-200 hover:shadow-lg hover:scale-110 flex justify-center items-center relative group cursor-pointer" onClick={()=>fetchSearchResults(favicons.firstUrl)}>
-                <img src={favicons.first} alt="Youtube" className="w-6 h-6"/>
+            <div className="w-12 h-12 rounded-md bg-slate-200 hover:shadow-lg hover:scale-110 flex justify-center items-center relative group cursor-pointer" >
+                <img src={favicons.first} alt="Youtube" className="w-6 h-6" onClick={()=>fetchSearchResults(favicons.firstUrl)}/>
                 <div className="absolute w-8 h-8 rounded-full bg-slate-600 -top-4 right-0 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-all duration-100" onClick={()=>{setFavEditOpen(true); setCurrFavTab("first")}}>
                     <MdEdit className="text-white"/>
                 </div>
             </div>
-            <div className="w-12 h-12 rounded-md bg-slate-200 hover:shadow-lg hover:scale-110 flex justify-center items-center relative group cursor-pointer" onClick={()=>fetchSearchResults(favicons.secondUrl)}>
-                <img src={favicons.second} alt="Insta" className="w-6 h-6"/>
+            <div className="w-12 h-12 rounded-md bg-slate-200 hover:shadow-lg hover:scale-110 flex justify-center items-center relative group cursor-pointer" >
+                <img src={favicons.second} alt="Insta" className="w-6 h-6" onClick={()=>fetchSearchResults(favicons.secondUrl)}/>
                 <div className="absolute w-8 h-8 rounded-full bg-slate-600 -top-4 right-0 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-all duration-100" onClick={()=>{setFavEditOpen(true); setCurrFavTab("second")}}>
                     <MdEdit className="text-white"/>
                 </div>
             </div>
-            <div className="w-12 h-12 rounded-md bg-slate-200 hover:shadow-lg hover:scale-110 flex justify-center items-center relative group cursor-pointer" onClick={()=>fetchSearchResults(favicons.thirdUrl)}>
-                <img src={favicons.third} alt="FB" className="w-6 h-6"/>
+            <div className="w-12 h-12 rounded-md bg-slate-200 hover:shadow-lg hover:scale-110 flex justify-center items-center relative group cursor-pointer" >
+                <img src={favicons.third} alt="FB" className="w-6 h-6" onClick={()=>fetchSearchResults(favicons.thirdUrl)}/>
                 <div className="absolute w-8 h-8 rounded-full bg-slate-600 -top-4 right-0 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-all duration-100" onClick={()=>{setFavEditOpen(true); setCurrFavTab("third")}}>
                     <MdEdit className="text-white"/>
                 </div>
