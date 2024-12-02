@@ -21,11 +21,12 @@ const App = () => {
 
     const [userName, setUserName] = useState("");
 
-    
+    const [dividerPosition, setDividerPosition] = useState(1);
+    const [isResizing, setIsResizing] = useState(false);
+    const dividerRef = useRef(null);
 
     const webviewRefs = useRef({});
    
-
     useEffect(() => {
       const unsubscribe = onAuthStateChanged(auth, (user) => {
         setIsAuthenticated(!!user);
@@ -34,6 +35,44 @@ const App = () => {
       return () => unsubscribe();
     }, []);
   
+    useEffect(() => {
+        if (isCopilotOpen) {
+          setDividerPosition(0.75); 
+        } else {
+          setDividerPosition(1); 
+        }
+      }, [isCopilotOpen]);
+
+    useEffect(() => {
+        if (isResizing) {
+          window.addEventListener('mousemove', handleMouseMove);
+          window.addEventListener('mouseup', handleMouseUp);
+        } else {
+          window.removeEventListener('mousemove', handleMouseMove);
+          window.removeEventListener('mouseup', handleMouseUp);
+        }
+      
+        return () => {
+          window.removeEventListener('mousemove', handleMouseMove);
+          window.removeEventListener('mouseup', handleMouseUp);
+        };
+      }, [isResizing]);
+  
+    const handleMouseDown = (e) => {
+        setIsResizing(true);
+        e.preventDefault();
+      };
+      
+      const handleMouseMove = (e) => {
+        if (isResizing) {
+          const newPosition = e.clientX / window.innerWidth;
+          setDividerPosition(Math.min(Math.max(newPosition, 0.1), 0.9)); // Prevent resizing beyond 10% and 90%
+        }
+      };
+      
+      const handleMouseUp = () => {
+        setIsResizing(false);
+      };
 
     //Add the url and timestamp to the database
     const saveHistory = async(url)=>{
@@ -190,7 +229,8 @@ const App = () => {
             {/*TODO: Make a component for the main page and copilot page */}
 
             <div className={`${isSidebarOpen ? 'w-3/4' : 'w-full'} main-box-shadow flex items-center justify-center rounded-3xl my-6 mx-4 transition-all duration-150 ease-in-out`}>
-                <div className={`${isCopilotOpen ? 'w-3/4 rounded-l-lg' : 'w-full rounded-lg'} h-full flex justify-center items-center overflow-hidden`}>
+                <div className={`${isCopilotOpen ? 'w-3/4 rounded-l-lg border-r-4 border-[#0083B0]' : 'w-full rounded-lg'} h-full flex justify-center items-center overflow-hidden`}
+                style={{width: `${dividerPosition*100}%`, maxWidth: '100%'}}>
                     {tabs.map((tab) => (
                         <div key={tab.id} className="w-full h-full" style={{ display: activeTab === tab.id ? "block" : "none" }}>
                             {tab.url ? 
@@ -205,13 +245,23 @@ const App = () => {
                                 }
                             }
                             partition="persist:default"
+                            style={{pointerEvents:'auto', overflow:'hidden'}}
                             /> : 
                             <Default userName={userName}/>}
                         </div>
                     ))}
                 </div>
 
-                <div className={`${isCopilotOpen ? 'w-1/4' : 'w-0'} h-full rounded-r-lg flex justify-center items-center overflow-hidden`}>
+                {isCopilotOpen && 
+                <div
+                ref={dividerRef}
+                onMouseDown={handleMouseDown}
+                className="cursor-col-resize w-3 bg-gray-400 h-full hover:bg-gray-500 transition-colors duration-150">
+                </div>
+                }
+
+                <div className={`${isCopilotOpen ? 'w-1/4' : 'w-0'} h-full rounded-r-lg flex justify-center items-center overflow-hidden`}
+                style={{width:`${(1-dividerPosition)*100}%`}}>
                     {isCopilotOpen && (
                         <div className='w-full h-full'>
                             <webview 
