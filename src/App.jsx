@@ -9,6 +9,7 @@ import {auth, db} from '../firebase'
 import { onAuthStateChanged } from 'firebase/auth';
 import { collection, addDoc } from 'firebase/firestore';
 
+
 const App = () => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
     const [isCopilotOpen, setIsCopilotOpen] = useState(false);
@@ -206,7 +207,7 @@ const App = () => {
 
     return (
         <div className='w-screen h-screen gradient-bg flex relative'>
-            <Sidebar
+            <Sidebar 
                 isSidebarOpen={isSidebarOpen}
                 setIsSidebarOpen={setIsSidebarOpen}
                 isCopilotOpen={isCopilotOpen}
@@ -227,9 +228,8 @@ const App = () => {
             />
 
             {/*TODO: Make a component for the main page and copilot page */}
-
             <div className={`${isSidebarOpen ? 'w-3/4' : 'w-full'} main-box-shadow flex items-center justify-center rounded-3xl my-6 mx-4 transition-all duration-150 ease-in-out`}>
-                <div className={`${isCopilotOpen ? 'w-3/4 rounded-l-lg border-r-4 border-[#0083B0]' : 'w-full rounded-lg'} h-full flex justify-center items-center overflow-hidden`}
+                <div className={`${isCopilotOpen ? 'w-3/4 rounded-l-lg' : 'w-full rounded-lg'} h-full flex justify-center items-center overflow-hidden`}
                 style={{width: `${dividerPosition*100}%`, maxWidth: '100%'}}>
                     {tabs.map((tab) => (
                         <div key={tab.id} className="w-full h-full" style={{ display: activeTab === tab.id ? "block" : "none" }}>
@@ -256,11 +256,11 @@ const App = () => {
                 <div
                 ref={dividerRef}
                 onMouseDown={handleMouseDown}
-                className="cursor-col-resize w-3 bg-gray-400 h-full hover:bg-gray-500 transition-colors duration-150">
+                className="cursor-col-resize w-3 bg-white h-full hover:bg-slate-400 transition-colors duration-150">
                 </div>
                 }
 
-                <div className={`${isCopilotOpen ? 'w-1/4' : 'w-0'} h-full rounded-r-lg flex justify-center items-center overflow-hidden`}
+                <div data-testid="Copilot Div" className={`${isCopilotOpen ? 'w-1/4' : 'w-0'} h-full rounded-r-lg flex justify-center items-center overflow-hidden`}
                 style={{width:`${(1-dividerPosition)*100}%`}}>
                     {isCopilotOpen && (
                         <div className='w-full h-full'>

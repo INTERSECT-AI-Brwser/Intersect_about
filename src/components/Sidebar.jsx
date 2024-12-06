@@ -147,7 +147,9 @@ const Sidebar = (
       }, [isSidebarOpen]);
 
   return (
-    <div className={`h-full px-4 py-2 transition-all duration-150 bottom-0 ${isSidebarOpen ? 'w-1/4': 'w-0 px-0 py-0'} flex flex-col`}>
+    <div
+    data-testid="Sidebar"
+    className={`h-full px-4 py-2 transition-all duration-150 bottom-0 ${isSidebarOpen ? 'w-1/4': 'w-0 px-0 py-0'} flex flex-col`}>
         {isSidebarOpen && !isHistoryView && (
             <>        
             <div className="flex cursor-pointer items-center justify-between mt-5 mx-2">
@@ -155,45 +157,45 @@ const Sidebar = (
                 <div className="w-3 h-3 rounded-full bg-red-500 hidden lg:block"></div>
                 <div className="w-3 h-3 rounded-full bg-yellow-500 hidden lg:block"></div>
                 <div className="w-3 h-3 rounded-full bg-green-500 hidden lg:block"></div>
-                <div><FiSidebar className="text-xl hover:scale-125" onClick={()=>setIsSidebarOpen(!isSidebarOpen)}/></div>
+                <div><FiSidebar data-testid="Toggle Sidebar" className="text-xl hover:scale-125 text-white" onClick={()=>setIsSidebarOpen(!isSidebarOpen)}/></div>
             </div>
 
             <div className="flex gap-5 items-center">
-                <FaArrowLeft className={`text-lg ${canGoBack ? 'text-black hover:scale-125 cursor-pointer' : 'text-gray-400 cursor-not-allowed'}`} onClick={canGoBack ? goBackCurrentTab : undefined}/>
-                <FaArrowRight className={`text-lg ${canGoForward ? 'text-black hover:scale-125 cursor-pointer' : 'text-gray-400 cursor-not-allowed'}`} onClick={canGoForward ? goForwardCurrentTab: undefined}/>
-                <RxReload className={`text-lg ${canReload ? 'text-black hover:scale-125 cursor-pointer' : 'text-gray-400 cursor-not-allowed'}`} onClick={canReload ? reloadCurrentTab : undefined}/>
+                <FaArrowLeft className={`text-lg ${canGoBack ? 'text-white hover:scale-125 cursor-pointer' : 'text-gray-400 cursor-not-allowed'}`} onClick={canGoBack ? goBackCurrentTab : undefined}/>
+                <FaArrowRight className={`text-lg ${canGoForward ? 'text-white hover:scale-125 cursor-pointer' : 'text-gray-400 cursor-not-allowed'}`} onClick={canGoForward ? goForwardCurrentTab: undefined}/>
+                <RxReload className={`text-lg font-bold ${canReload ? 'text-white hover:scale-125 cursor-pointer' : 'text-gray-400 cursor-not-allowed'}`} onClick={canReload ? reloadCurrentTab : undefined}/>
             </div>
         </div>
 
         {/*Search Bar*/}
         <div className="relative p-4 mt-2">
-            <input type="text" value={urlText} onChange={e=>setUrlText(e.target.value)} className="w-full rounded-lg pl-4 pr-12 py-2 bg-slate-200 text-black focus:outline-none truncate" onKeyDown={handleKeyDown}/>
+            <input data-testid="Input URL" type="text" value={urlText} onChange={e=>setUrlText(e.target.value)} className="w-full rounded-lg pl-4 pr-12 py-2 bg-white text-black focus:outline-none truncate" onKeyDown={handleKeyDown}/>
             <div className="cursor-pointer absolute top-1/2 -translate-y-1/2 right-4 mr-2 flex gap-3">
-                <FaSearch className="text-md hover:scale-125" onClick={()=>handleSearch()}></FaSearch>
-                <GoCopilot className="text-lg hover:scale-125" onClick={()=>setIsCopilotOpen(!isCopilotOpen)}/>
+                <FaSearch data-testid="Search URL" className="text-md hover:scale-125" onClick={()=>handleSearch()}></FaSearch>
+                <GoCopilot data-testid="Copilot" className="text-lg hover:scale-125" onClick={()=>setIsCopilotOpen(!isCopilotOpen)}/>
             </div>
         </div>
 
         {/*History and Fav Apps */}
         <div className="flex items-center justify-evenly mt-5 cursor-pointer transition-all duration-100 ease-in-out flex-wrap gap-5">
-            <div className="w-12 h-12 rounded-md bg-slate-200 hover:shadow-lg hover:scale-110 flex justify-center items-center" onClick={async()=>{
+            <div className="w-12 h-12 rounded-md bg-white hover:shadow-lg hover:scale-110 flex justify-center items-center" onClick={async()=>{
                 await fetchHistory();
                 setIsHistoryView(true);
             }}><LuHistory className="text-2xl"/>
             </div>
-            <div className="w-12 h-12 rounded-md bg-slate-200 hover:shadow-lg hover:scale-110 flex justify-center items-center relative group cursor-pointer" >
+            <div className="w-12 h-12 rounded-md bg-white hover:shadow-lg hover:scale-110 flex justify-center items-center relative group cursor-pointer" >
                 <img src={favicons.first} alt="Youtube" className="w-6 h-6" onClick={()=>fetchSearchResults(favicons.firstUrl)}/>
                 <div className="absolute w-8 h-8 rounded-full bg-slate-600 -top-4 right-0 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-all duration-100" onClick={()=>{setFavEditOpen(true); setCurrFavTab("first")}}>
                     <MdEdit className="text-white"/>
                 </div>
             </div>
-            <div className="w-12 h-12 rounded-md bg-slate-200 hover:shadow-lg hover:scale-110 flex justify-center items-center relative group cursor-pointer" >
+            <div className="w-12 h-12 rounded-md bg-white hover:shadow-lg hover:scale-110 flex justify-center items-center relative group cursor-pointer" >
                 <img src={favicons.second} alt="Insta" className="w-6 h-6" onClick={()=>fetchSearchResults(favicons.secondUrl)}/>
                 <div className="absolute w-8 h-8 rounded-full bg-slate-600 -top-4 right-0 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-all duration-100" onClick={()=>{setFavEditOpen(true); setCurrFavTab("second")}}>
                     <MdEdit className="text-white"/>
                 </div>
             </div>
-            <div className="w-12 h-12 rounded-md bg-slate-200 hover:shadow-lg hover:scale-110 flex justify-center items-center relative group cursor-pointer" >
+            <div className="w-12 h-12 rounded-md bg-white hover:shadow-lg hover:scale-110 flex justify-center items-center relative group cursor-pointer" >
                 <img src={favicons.third} alt="FB" className="w-6 h-6" onClick={()=>fetchSearchResults(favicons.thirdUrl)}/>
                 <div className="absolute w-8 h-8 rounded-full bg-slate-600 -top-4 right-0 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-all duration-100" onClick={()=>{setFavEditOpen(true); setCurrFavTab("third")}}>
                     <MdEdit className="text-white"/>
@@ -203,7 +205,7 @@ const Sidebar = (
 
         {favEditOpen && 
         <div className="mt-10 flex items-center justify-center gap-2">
-            <input type="text" className=" w-3/4 rounded-lg pl-4 pr-12 py-2 bg-slate-200 text-black focus:outline-none" placeholder="Enter New URL" onChange={e=>setNewFavTab(e.target.value)}/>
+            <input type="text" className=" w-3/4 rounded-lg pl-4 pr-12 py-2 bg-white text-black focus:outline-none" placeholder="Enter New URL" onChange={e=>setNewFavTab(e.target.value)}/>
             <div className="py-2 px-4 bg-green-500 cursor-pointer flex justify-center items-center text-white rounded-md hover:bg-green-800" onClick={changeFavTab}>Save</div>
         </div>
         }
@@ -215,8 +217,9 @@ const Sidebar = (
 
         {/*New and Open Tabs */}
         <div className="flex flex-col gap-5 h-3/4 overflow-scroll mb-5">
-            <div 
-                className="flex gap-3 items-center cursor-pointer transition-all duration-150 ease-in-out hover:bg-slate-200 rounded-lg p-2" 
+            <div
+                data-testid="Open New Tab"
+                className="flex gap-3 items-center cursor-pointer transition-all duration-150 ease-in-out hover:bg-white rounded-lg p-2 text-white hover:text-black" 
                 onClick={openNewTab}
             >
                 <IoIosAdd className="text-2xl"/>
@@ -224,7 +227,7 @@ const Sidebar = (
             </div>
 
             {tabs.map((tab,index)=>(
-                <div key={tab.id} className={`relative group text-center flex gap-3 items-center cursor-pointer transition-all duration-150 ease-in-out hover:bg-slate-200 rounded-lg p-2 ${tab.id===activeTab ? "bg-slate-300" : ""}`} onClick={()=>setActiveTab(tab.id)}> 
+                <div data-testid="Tabs" key={tab.id} className={`relative group text-center flex gap-3 items-center cursor-pointer transition-all duration-150 ease-in-out hover:scale-90 rounded-lg p-2 ${tab.id===activeTab ? "bg-white" : ""}`} onClick={()=>setActiveTab(tab.id)}> 
                 <img src={tab.favicon || defaultPic} 
                     alt="IB"
                     className="w-6 h-6" 
@@ -233,7 +236,7 @@ const Sidebar = (
                     }}
                 />
                 <div className="absolute right-0 -top-2 w-5 h-5 rounded-full bg-red-500 flex items-center justify-center opacity-0 group-hover:opacity-100"> 
-                    <ImCross className="text-xs text-slate-100" onClick={()=>closeTab(tab.id)}/>
+                    <ImCross className="text-xs text-white" onClick={()=>closeTab(tab.id)}/>
                 </div>
                 <span className="hidden md:block">{tab.name}</span>
             </div>
@@ -241,9 +244,9 @@ const Sidebar = (
 
         </div>
 
-        <div className="self-start mt-auto mb-5 w-12 h-12 rounded-full cursor-pointer bg-slate-100 flex items-center justify-center p-2 shadow-md relative" onClick={()=>setIsSignOutButton(!isSignOutButton)}>
+        <div className="self-start mt-auto mb-5 w-12 h-12 rounded-full cursor-pointer bg-white flex items-center justify-center p-2 shadow-md relative" onClick={()=>setIsSignOutButton(!isSignOutButton)}>
             <img src={userImage} alt="UserRandom" className="hover:animate-spin"/>
-            {isSignOutButton &&<div className="w-24 text-center font-light bg-slate-100 text-black absolute left-14 top-1/2 -translate-y-1/2 rounded-md p-2 hover:scale-95 cursor-pointer" onClick={handleSignOut}>Sign Out</div>}
+            {isSignOutButton &&<div className="w-24 text-center font-light bg-white text-black absolute left-14 top-1/2 -translate-y-1/2 rounded-md p-2 hover:scale-95 cursor-pointer" onClick={handleSignOut}>Sign Out</div>}
         </div>
             </>)}
 
@@ -271,7 +274,7 @@ const Sidebar = (
                             key={item.id}
                             className="mb-4 flex justify-between items-center border-b border-gray-700 pb-2"
                         >
-                            <p className="flex-1 truncate">{item.url}</p>
+                            <p className="flex-1 truncate cursor-pointer hover:underline" onClick={()=>fetchSearchResults(item.url)}>{item.url}</p>
                             <small className="text-right font-extralight w-40">
                                 {new Date(item.visitedAt).toLocaleString()}
                             </small>

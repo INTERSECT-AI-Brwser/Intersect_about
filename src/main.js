@@ -1,8 +1,7 @@
 const electron = require('electron');
 const { app, BrowserWindow, screen, session} = electron;
-const path = require('node:path');
+const path = require('path');
 
-let views = {}
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
@@ -15,6 +14,7 @@ const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: width,
     height: height,
+    title: "Intersect",
     webPreferences: {
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
       webSecurity:false,
@@ -28,6 +28,8 @@ const createWindow = () => {
 
   // and load the index.html of the app.
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
+
+  mainWindow.setTitle("Intersect");
 
   // Open the DevTools.
   //mainWindow.webContents.openDevTools();
