@@ -66,7 +66,9 @@ const Welcome = ({setIsAuthenticated, setUserName}) => {
   };
 
   return (
-    <div className="w-screen h-screen gradient-bg text-white flex items-center justify-center transition-all ease-in duration-100">
+    <div 
+    data-testid="Welcome"
+    className="w-screen h-screen gradient-bg text-white flex items-center justify-center transition-all ease-in duration-150">
         <div className='w-1/2 h-full flex flex-col items-center p-10'>
             <img src={landingPage} alt="Landing-Page" className='w-48 h-48 rounded-full shadow-lg' />
             <h1 className='text-4xl font-bold my-10'>What's So Special?</h1>
@@ -129,10 +131,10 @@ const Welcome = ({setIsAuthenticated, setUserName}) => {
           />
         </div>
 
-        <button onClick={handleAuth} className="bg-[#006080] text-white w-1/2 px-2 py-4 rounded-lg mt-10 mb-4 text-lg hover:scale-95 hover:bg-[#0083B0] shadow-lg">
+        <button onClick={handleAuth} className="bg-[#0190c0] text-white w-1/2 px-2 py-4 rounded-lg mt-10 mb-4 text-lg hover:scale-95 hover:bg-[#017297] shadow-lg">
           {isSignUp ? "Sign Up" : "Sign In"}
         </button>
-        <button onClick={() => setIsSignUp(!isSignUp)} className="text-white text-lg font-light hover:text-blue-100">
+        <button onClick={() => setIsSignUp(!isSignUp)} className="text-white text-lg font-light hover:text-slate-200 hover:underline">
           {isSignUp ? "Already have an account? Sign In" : "Don't have an account? Sign Up"}
         </button>
 

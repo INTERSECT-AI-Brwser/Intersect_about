@@ -18,7 +18,8 @@ const Default = ({userName}) => {
     }
 
   return (
-    <div className="h-full flex justify-center items-center bg-image">
+    <div data-testid="Default" 
+    className="h-full flex justify-center items-center bg-image">
         <div className='text-center flex flex-col gap-5 text-white'>
             <h1 className='text-8xl'>{currTime.toLocaleTimeString()}</h1>
             <h2 className='text-4xl font-light'>{getGreeting()} <br/> {userName}</h2>
