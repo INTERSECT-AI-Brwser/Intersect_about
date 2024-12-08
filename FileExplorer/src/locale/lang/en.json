@@ -1,0 +1,285 @@
+{
+    "translations": {
+        "CURRENT_LANGUAGE": "English",
+        "NAV": {
+            "EXPLORER": "Explorer",
+            "TRANSFERS": "Transfers",
+            "PREFS": "Preferences",
+            "SHORTCUTS": "Keyboard shortcuts",
+            "SPLITVIEW": "Toggle split view"
+        },
+        "DRAG": {
+            "MULTIPLE": "Copy {{count}} elements"
+        },
+        "TABS": {
+            "CLOSE": "Close tab",
+            "NEW": "New tab",
+            "REFRESH": "Refresh",
+            "CLOSE_OTHERS": "Close other tabs"
+        },
+        "DIALOG": {
+            "QUIT": {
+                "BT_STOP_TRANSFERS": "Cancel & quit",
+                "BT_KEEP_TRANSFERS": "Keep transfers",
+                "CONTENT_one": "There is <1>{{count}}</1> transfer <3>in progress</3>.<5 /><6 />Exiting the app now will <8>cancel</8> the download.",
+                "CONTENT_other": "There are <1>{{count}}</1> transfers <3>in progress</3>.<5 /><6 />Exiting the app now will <8>cancel</8> all downloads."
+            },
+            "STOP_TRANSFER": {
+                "BT_OK": "Discard transfer",
+                "BT_CANCEL": "Keep transfer",
+                "MESSAGE": "Discarding the transfer will cancel every on-going copy."
+            },
+            "MAKEDIR": {
+                "NOT_VALID": "Folder name is not valid.",
+                "TITLE": "Enter a name for the new folder:",
+                "NAME": "Folder name",
+                "CREATE": "Create",
+                "CREATE_READ": "Create & read folder"
+            },
+            "LOGIN": {
+                "TITLE": "Login to {{server}}",
+                "SERVER_NAME": "Enter server",
+                "SERVER": "server",
+                "USERNAME": "username",
+                "USERINPUT": "Enter username",
+                "HINT_USERNAME": "Leave empty for anonymous login",
+                "PASSWORD": "password",
+                "HINT_PASSWORD": "Required for non-anonymous login",
+                "PASSWORDINPUT": "Enter password",
+                "PORT": "port",
+                "LOGIN": "Login"
+            },
+            "PREFS": {
+                "TITLE": "Preferences",
+                "DEFAULT_FOLDER": "Default folder path",
+                "LANGUAGE": "Language",
+                "DARK": "Dark",
+                "BRIGHT": "Bright",
+                "THEME": "Theme",
+                "RESET": "Reset Prefs",
+                "RESET_HELP": "Click here to restore the default prefs",
+                "INVALID_FOLDER": "Invalid folder name or non-existing folder",
+                "DEFAULT_TERMINAL": "External terminal",
+                "DEFAULT_TERMINAL_HELP": "Customizes what kind of terminal to launch",
+                "DEFAULT_VIEW_MODE": "Default view mode",
+                "TEST_TERMINAL": "Click here to launch the specified external terminal",
+                "TEST_TERMINAL_FAILED": "Unable to start specified terminal: {{terminal}} (return code: {{code}})"
+            },
+            "DELETE": {
+                "CONFIRM": "Are you sure you want to delete <1>{{count}}</1> file(s)/folder(s)?<3 /><4 />This action will <6>permanentaly</6> delete the selected elements."
+            },
+            "SHORTCUTS": {
+                "FILTER_PLACEHOLDER": "Filter shortcuts",
+                "NO_RESULTS": "No shortcut matches this filter"
+            },
+            "PREVIEW": {
+                "LAST_MODIFIED_ON": "Last modified on {{date}}",
+                "OPEN": "Open"
+            }
+        },
+        "SHORTCUT": {
+            "OPEN_DEVTOOLS": "Dev tools",
+            "MAIN": {
+                "QUIT": "Exit React-Explorer",
+                "RELOAD_VIEW": "Reload current view",
+                "NEXT_VIEW": "Activate next view",
+                "PREVIOUS_VIEW": "Activate previous view",
+                "DOWNLOADS_TAB": "Switch to transfers view",
+                "EXPLORER_TAB": "Switch to explorer view",
+                "KEYBOARD_SHORTCUTS": "Keyboard Map",
+                "PREFERENCES": "Preferences"
+            },
+            "LOG": {
+                "TOGGLE": "Toggle Logs console"
+            },
+            "TABS": {
+                "CLOSE_ACTIVE_TAB": "Close active tab"
+            },
+            "ACTIVE_VIEW": {
+                "TABLE_MODE": "Table view",
+                "ICON_MODE": "Icons view",
+                "SORT_BY_NAME": "Sort by Name",
+                "SORT_BY_SIZE": "Sort by Size",
+                "SORT_ORDER_ASCENDING": "Ascending Order",
+                "SORT_ORDER_DESCENDING": "Descending Order",
+                "COPY": "Copy selected items to clipboard",
+                "PASTE": "Paste selected items into current folder",
+                "VIEW_HISTORY": "Show nav history (debug)",
+                "FOCUS_PATH": "Focus address bar",
+                "BACKWARD_HISTORY": "Go Back",
+                "FORWARD_HISTORY": "Go Forward",
+                "OPEN_FILE": "Open the selected file/folder",
+                "OPEN_FILE_INACTIVE_VIEW": "Open the selected file/folder in the other view",
+                "COPY_PATH": "Copy selected items'path into the clipboard",
+                "COPY_FILENAME": "Copy selected items' filenames into the clipboard",
+                "DELETE": "Delete selected items",
+                "SELECT_ALL": "Select all items",
+                "SELECT_INVERT": "Invert selection",
+                "OPEN_TERMINAL": "Open Terminal in active folder",
+                "PARENT_DIRECTORY": "Go to parent folder",
+                "OPEN_PREVIEW": "Display a preview of selected file"
+            },
+            "GROUP": {
+                "ACTIVE_VIEW": "Active file view",
+                "GLOBAL": "Global Shortcuts",
+                "TABS": "Tabs management"
+            }
+        },
+        "STATUS": {
+            "SHOW_HIDDEN_FILES": "Show hidden files",
+            "HIDE_HIDDEN_FILES": "Hide hidden files",
+            "FILES_one": "{{count}} file",
+            "FILES_other": "{{count}} files",
+            "FOLDERS_one": "{{count}} folder",
+            "FOLDERS_other": "{{count}} folders"
+        },
+        "TOOLBAR": {
+            "BACK": "Click here to go backwards",
+            "FORWARD": "Click here to go forward",
+            "PARENT": "Open parent folder",
+            "ICON_VIEW": "Icons",
+            "DETAILS_VIEW": "Details",
+            "CHANGE_VIEW": "Change display mode",
+            "CHANGE_SORT_METHOD": "Change files sort method"
+        },
+        "COMMON": {
+            "SIZE": {
+                "B_one": "byte",
+                "B_other": "bytes",
+                "KB": "Kb",
+                "MB": "Mb",
+                "GB": "Gb",
+                "TB": "Tb"
+            },
+            "CP_COPIED_one": "{{count}} element has been copied into the clipboard",
+            "CP_COPIED_other": "{{count}} elements have been copied into the clipboard",
+            "CP_NAMES_COPIED_one": "Selected element's name has been copied into the clipboard",
+            "CP_NAMES_COPIED_other": "{{count}} elements' name have been copied into the clipboard",
+            "CP_PATHS_COPIED_one": "Selected element's path has been copied into the clipboard",
+            "CP_PATHS_COPIED_other": "{{count}} elements' path have been copied into the clipboard",
+            "DELETE_SUCCESS_one": "The file/folder has been deleted.",
+            "DELETE_SUCCESS_other": "The files/folders have been deleted.",
+            "MAKEDIR": "New Folder",
+            "CANCEL": "Cancel",
+            "OK": "OK",
+            "AUTO": "Automatic",
+            "CLOSE": "Close",
+            "EMPTY_FOLDER": "Folder is empty.",
+            "NO_SUCH_FOLDER": "No such folder or permission denied.",
+            "PATH_PLACEHOLDER": "Enter path to load",
+            "COPY_FINISHED": "The files have been copied successfully.",
+            "COPY_WARNING_zero": "Copy finished: no item could be copied.",
+            "COPY_WARNING_one": "Copy finished: some items could not be copied.",
+            "COPY_WARNING_other": "Copy finished: some items could not be copied."
+        },
+        "FILETABLE": {
+            "COL_NAME": "Name",
+            "COL_SIZE": "Size",
+            "SORT_ASCENDING": "Ascending",
+            "SORT_DESCENDING": "Descending"
+        },
+        "FILEMENU": {
+            "PASTE_one": "Paste {{count}} item",
+            "PASTE_other": "Paste {{count}} items",
+            "DELETE_one": "Delete {{count}} item",
+            "DELETE_other": "Delete {{count}} items"
+        },
+        "DOWNLOADS": {
+            "EMPTY_TITLE": "No download.",
+            "FINISHED": "Finished",
+            "FINISHED_ERRORS": "Finished, with errors",
+            "PROGRESS": "{{current}} / {{size}}",
+            "ERROR": "Error",
+            "CANCELLED": "Cancelled",
+            "QUEUED": "Queued"
+        },
+        "ERRORS": {
+            "CANNOT_READ_FOLDER": "Cannot open '{{folder}}': no such file or directory",
+            "ENOTFOUND": "Server not found: check hostname",
+            "ECONNREFUSED": "Connection refused by the server",
+            "ENOENT": "No such file or directory",
+            "EPERM": "You don't have the permission to do this action",
+            "EIO": "Transfer was interrupted",
+            "EACCES": "Permission denied",
+            "ENOSPC": "no space left on device",
+            "EHOSTDOWN": "Your internet connection appears to be down :(",
+            "530": "Login authentication failed",
+            "550": "File unavailable, not found, not accessible",
+            "ENOTDIR": "Path entered is not a directory",
+            "EROS": "Device is read only.",
+            "UNKNOWN": "An error has occured",
+            "GENERIC": "{{error.message}} (code {{error.code}})",
+            "BAD_FILENAME": "File or directory name not valid: '{{entry}}'",
+            "WIN_VALID_FILENAME": "All characters except *:<>\\?|\" can be used",
+            "UNIX_VALID_FILENAME": "All characters except / can be used",
+            "DELETE": "Error deleting files: {{message}}",
+            "DELETE_WARN": "Some files could not be deleted",
+            "CREATE_FOLDER": "Error creating folder: {{message}}",
+            "EEXIST": "A file with that name already exists",
+            "NODEST": "copy target could not be accessed",
+            "COPY_ERROR": "Couldn't copy files: {{message}}",
+            "COPY_UNKNOWN_ERROR": "Error while copying files.",
+            "SHELL_OPEN_FAILED": "Could not open file: no application to open it.",
+            "OPEN_TERMINAL_FAILED": "Could not open terminal. Check that the path is correct in the settings."
+        },
+        "MAIN_PROCESS": {
+            "PRESS_TO_EXIT": "Keep pressing ⌘Q to exit"
+        },
+        "FAVORITES_PANEL": {
+            "SHORTCUTS": "Shortcuts",
+            "PLACES": "Places",
+            "LINUX": "Linux",
+            "DOWNLOADS_DIR": "Downloads",
+            "MUSIC_DIR": "Music",
+            "PICTURES_DIR": "Images",
+            "DESKTOP_DIR": "Desktop",
+            "VIDEOS_DIR": "Videos",
+            "DOCS_DIR": "Documents"
+        },        
+        "APP_MENUS": {
+            "ABOUT": "About React-Explorer",
+            "PREFS": "Preferences",
+            "EXIT": "Quit React-Explorer",
+            "TITLE_FILE": "File",
+            "TITLE_EDIT": "Edit",
+            "TITLE_VIEW": "View",
+            "TITLE_HELP": "Help",
+            "TITLE_GO": "Go",
+            "TITLE_WINDOW": "Window",
+            "MAKEDIR": "New Directory",
+            "RENAME": "Rename",
+            "DELETE": "Delete",
+            "OPEN_TERMINAL": "Open Terminal",
+            "COPY": "Copy",
+            "CUT": "Cut",
+            "SELECT_ALL": "Select All",
+            "COPY_PATH": "Copy Path",
+            "COPY_FILENAMES": "Copy Filenames",
+            "PASTE": "Paste",
+            "RELOAD_VIEW": "Reload Active View",
+            "FORCE_RELOAD_APP": "Force Reload App",
+            "KEYBOARD_SHORTCUTS": "Keyboard Map",
+            "ABOUT_TITLE": "React-Explorer",
+            "ABOUT_CONTENT": "Version ${version}\nCommit: ${hash}\nDate: ${date}\nElectron: ${electron}\nChrome: ${chrome}\nNode: ${node}\nOS: ${platform} ${arch} ${release}",
+            "ZOOM": "Zoom",
+            "MINIMIZE": "Minimize",
+            "SELECT_NEXT_TAB": "Select next tab",
+            "SELECT_PREVIOUS_TAB": "Select previous tab",
+            "NEW_TAB": "New tab",
+            "CLOSE_TAB": "Close tab",
+            "OK": "OK",
+            "TOGGLE_SPLITVIEW": "Toggle Split View",
+            "GO_PARENT": "Parent folder",
+            "GO_BACK": "Back",
+            "GO_FORWARD": "Forward",
+            "TOGGLE_HIDDEN_FILES": "Show/Hide Hidden Files",
+            "TOGGLE_ICONVIEW_MODE": "as Icons",
+            "TOGGLE_TABLEVIEW_MODE": "as List",
+            "SORT_BY": "Sort By",
+            "SORT_BY_NAME": "Name",
+            "SORT_BY_SIZE": "Size",
+            "SORT_ASCENDING": "Ascending",
+            "SORT_DESCENDING": "Descending"
+        }
+    }
+}

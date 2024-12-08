@@ -1,0 +1,44 @@
+/*
+.favoritesPanel {
+    position:relative;
+    overflow:auto;
+    flex-shrink:0;
+    width:200px;
+    margin: 0;
+    list-style-type: none;
+    background: rgba(206, 217, 224, 0.5);
+    padding: 0;
+    font-size:13px;
+}
+*/
+.favoritesPanel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto; /* or set a specific height, e.g., 100px */
+    overflow-x: hidden;
+    overflow-y: auto;
+    flex-shrink: 0;
+    margin: 0;
+    list-style-type: none;
+    background: rgba(206, 217, 224, 0.5);
+    padding: 0;
+    font-size: 13px;
+    z-index: 10; /* Ensure it's above other content */
+}
+.bp4-dark .favoritesPanel {
+    background-color:rgb(12, 11, 11);
+}
+
+.favoritesPanel .bp4-tree-node-content-0 {
+    pointer-events: none;
+}
+
+.favoritesPanel .bp4-tree-node-content-0:hover {
+    background-color:transparent;
+}
+
+.favoritesPanel .bp4-tree-node-content-0 .bp4-icon {
+    pointer-events: all;
+}

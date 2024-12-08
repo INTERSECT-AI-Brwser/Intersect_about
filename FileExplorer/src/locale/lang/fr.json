@@ -1,0 +1,285 @@
+{
+    "translations": {
+        "CURRENT_LANGUAGE": "Français",
+        "NAV": {
+            "EXPLORER": "Explorateur",
+            "TRANSFERS": "Téléchargements",
+            "PREFS": "Préférences",
+            "SHORTCUTS": "Raccourcis clavier",
+            "SPLITVIEW": "Activer/Désactiver double vue"
+        },
+        "DRAG": {
+            "MULTIPLE": "Copier {{count}} éléments"
+        },
+        "TABS": {
+            "CLOSE": "Fermer l'onglet",
+            "NEW": "Nouvel onglet",
+            "REFRESH": "Actualiser",
+            "CLOSE_OTHERS": "Fermer les autres onglets"
+        },
+        "DIALOG": {
+            "QUIT": {
+                "BT_STOP_TRANSFERS": "Arrêter & quitter",
+                "BT_KEEP_TRANSFERS": "Ne pas quitter",
+                "CONTENT_one": "<1>{{count}}</1> téléchargement est <3>en cours</3>.<5 /><6 />Quiiter l'application maintenant le <8>stoppera</8>.",
+                "CONTENT_other": "<1>{{count}}</1> téléchargements sont <3>en cours</3>.<5 /><6 />Quiiter l'application maintenant les <8>arrêtera</8>."
+            },
+            "STOP_TRANSFER": {
+                "BT_OK": "Supprimer le transfert",
+                "BT_CANCEL": "Continuer les copies",
+                "MESSAGE": "Supprimer le transfert stoppera toutes les copies en cours."
+            },
+            "MAKEDIR": {
+                "NOT_VALID": "Nom de dossier non valide.",
+                "TITLE": "Entrer un nom pour le nouveau dossier:",
+                "NAME": "Nom du dossier",
+                "CREATE": "Créer",
+                "CREATE_READ": "Créer & ouvrir dossier"
+            },
+            "LOGIN": {
+                "TITLE": "Connexion à {{server}}",
+                "SERVER_NAME": "Entrer le serveur",
+                "SERVER": "serveur",
+                "USERNAME": "identifiant",
+                "USERINPUT": "Saisir l'identifiant",
+                "HINT_USERNAME": "Laisser vide pour une connexion anonyme",
+                "PASSWORD": "mot de passe",
+                "HINT_PASSWORD": "Requis si connexion non anonyme",
+                "PASSWORDINPUT": "Saisir le mot de passe",
+                "PORT": "port",
+                "LOGIN": "Connexion"
+            },
+            "PREFS": {
+                "TITLE": "Préférences",
+                "DEFAULT_FOLDER": "Chemin par défaut",
+                "LANGUAGE": "Langue",
+                "DARK": "Sombre",
+                "BRIGHT": "Clair",
+                "THEME": "Thème",
+                "RESET": "Réinitialiser Préférences",
+                "RESET_HELP": "Cliquer ici pour revenir aux préférences d'origine",
+                "INVALID_FOLDER": "Nom de dossier invalide ou introuvable",
+                "DEFAULT_TERMINAL": "Terminal externe",
+                "DEFAULT_TERMINAL_HELP": "Spécifie le type de terminal à lancer",
+                "DEFAULT_VIEW_MODE": "Mode d'affichage par défaut",
+                "TEST_TERMINAL": "Cliquez ici pour lancer le terminal specifié",
+                "TEST_TERMINAL_FAILED": "Impossible de lancer le terminal spécifié: {{terminal}} (code de retour: {{code}})"
+            },
+            "DELETE": {
+                "CONFIRM": "Etes-vous sûr de vouloir supprimer <1>{{count}}</1> fichier(s)/dossier(s) ?<3 /><4 />Cette action supprimera de manière <6>permanente</6> les éléments sélectionnés."
+            },
+            "SHORTCUTS": {
+                "FILTER_PLACEHOLDER": "Rechercher un raccourci",
+                "NO_RESULTS": "Aucun raccourci pour ce filtre"
+            },
+            "PREVIEW": {
+                "LAST_MODIFIED_ON": "Dernière modification le {{date}}",
+                "OPEN": "Ouvrir"
+            }
+        },
+        "SHORTCUT": {
+            "OPEN_DEVTOOLS": "Outils de développement",
+            "MAIN": {
+                "QUIT": "Quitter React-Explorer",
+                "RELOAD_VIEW": "Recharger la vue",
+                "NEXT_VIEW": "Activer la vue suivante",
+                "PREVIOUS_VIEW": "Activer la vue précédente",
+                "DOWNLOADS_TAB": "Afficher les transfers",
+                "EXPLORER_TAB": "Afficher l'explorateur",
+                "KEYBOARD_SHORTCUTS": "Liste des Raccourcis",
+                "PREFERENCES": "Préférences"
+            },
+            "LOG": {
+                "TOGGLE": "Afficher/cacher la console"
+            },
+            "TABS": {
+                "CLOSE_ACTIVE_TAB": "Fermer l'onglet actif"
+            },
+            "ACTIVE_VIEW": {
+                "TABLE_MODE": "Vue liste",
+                "ICON_MODE": "Vue icônes",
+                "SORT_BY_NAME": "Trier par Nom",
+                "SORT_BY_SIZE": "Trier par Taille",
+                "SORT_ORDER_ASCENDING": "Croissant",
+                "SORT_ORDER_DESCENDING": "Décroissant",
+                "COPY": "Copier les éléments sélectionnés dans le presse-papier",
+                "PASTE": "Coller les éléments sélectionnés dans le presse-papier",
+                "VIEW_HISTORY": "Afficher l'historique de navigation (debug)",
+                "FOCUS_PATH": "Activer la barre d'adresse",
+                "BACKWARD_HISTORY": "Reculer d'un dossier (historique)",
+                "FORWARD_HISTORY": "Avancer d'un dossier (historique)",
+                "OPEN_FILE": "Ouvre le fichier/dossier sélectionné",
+                "OPEN_FILE_INACTIVE_VIEW": "Ouvre le fichier/dossier sélectionné dans l'autre vue",
+                "COPY_PATH": "Copier le chemin des éléments sélectionnés",
+                "COPY_FILENAME": "Copier le nom des éléments sélectionnés",
+                "DELETE": "Supprimer les éléments sélectionnés",
+                "SELECT_ALL": "Selectionner tous les éléments",
+                "SELECT_INVERT": "Inverser la selection",
+                "OPEN_TERMINAL": "Ouvre un Terminal dans le dossier courant",
+                "PARENT_DIRECTORY": "Ouvre le dossier parent",
+                "OPEN_PREVIEW": "Affiche un aperçu du fichier selectionné"
+            },
+            "GROUP": {
+                "ACTIVE_VIEW": "Vue de dossier active",
+                "GLOBAL": "Raccourcis Globaux",
+                "TABS": "Gestion des onglets"
+            }
+        },
+        "STATUS": {
+            "SHOW_HIDDEN_FILES": "Afficher les fichiers cachés",
+            "HIDE_HIDDEN_FILES": "Ne pas afficher les fichiers cachés",
+            "FILES_one": "{{count}} fichier",
+            "FILES_other": "{{count}} fichiers",
+            "FOLDERS_one": "{{count}} dossier",
+            "FOLDERS_other": "{{count}} dossiers"
+        },
+        "TOOLBAR": {
+            "BACK": "Cliquer pour revenir en arrière",
+            "FORWARD": "Cliquer pour avancer",
+            "PARENT": "Voir le dossier parent",
+            "ICON_VIEW": "Icônes",
+            "DETAILS_VIEW": "Détails",
+            "CHANGE_VIEW": "Changer le mode d'affichage",
+            "CHANGE_SORT_METHOD": "Modifier l'ordonnancement des fichiers"
+        },
+        "COMMON": {
+            "SIZE": {
+                "B_one": "octet",
+                "B_other": "octets",
+                "KB": "Ko",
+                "MB": "Mo",
+                "GB": "Go",
+                "TB": "To"
+            },
+            "CP_COPIED_one": "{{count}} élément a été copié dans le presse-papier",
+            "CP_COPIED_other": "{{count}} éléments ont été copiés dans le presse-papier",
+            "CP_NAMES_COPIED_one": "Le nom de l'élément sélectionné a été copié dans le presse-papier",
+            "CP_NAMES_COPIED_other": "Les noms des {{count}} éléments sélectionnés ont été copiés dans le presse-papier",
+            "CP_PATHS_COPIED_one": "Le chemin vers l'élément sélectionné a été copié dans le presse-papier",
+            "CP_PATHS_COPIED_other": "Les chemins des {{count}} éléments sélectionnés ont été copiés dans le presse-papier",
+            "DELETE_SUCCESS_one": "Le fichier/dossier a été supprimé.",
+            "DELETE_SUCCESS_other": "Les fichiers/dossiers ont été supprimés.",            
+            "MAKEDIR": "Nouveau dossier",
+            "CANCEL": "Annuler",
+            "OK": "OK",
+            "AUTO": "Automatique",
+            "CLOSE": "Fermer",
+            "EMPTY_FOLDER": "Dossier vide.",
+            "NO_SUCH_FOLDER": "Dossier inexistant ou inaccessible.",
+            "PATH_PLACEHOLDER": "Entrer le chemin à visiter",
+            "COPY_FINISHED": "La copie a été réalisée avec succès",
+            "COPY_WARNING_zero": "Copie terminée: aucun élément n'a pu être copié.",
+            "COPY_WARNING_one": "Copie terminée: certains éléments n'ont pu être copiés.",
+            "COPY_WARNING_other": "Copie terminée: certains éléments n'ont pu être copiés."
+        },
+        "FILETABLE": {
+            "COL_NAME": "Nom",
+            "COL_SIZE": "Taille",
+            "SORT_ASCENDING": "Croissant",
+            "SORT_DESCENDING": "Décroissant"
+        },
+        "FILEMENU": {
+            "PASTE_one": "Coller {{count}} élément",
+            "PASTE_other": "Coller {{count}} éléments",
+            "DELETE_one": "Supprimer {{count}} élément",
+            "DELETE_other": "Supprimer {{count}} éléments"
+        },
+        "DOWNLOADS": {
+            "EMPTY_TITLE": "Aucun téléchargement.",
+            "FINISHED": "Terminé",
+            "FINISHED_ERRORS": "Terminé, mais avec erreurs",
+            "PROGRESS": "{{current}} / {{size}}",
+            "ERROR": "Erreur",
+            "CANCELLED": "Annulé",
+            "QUEUED": "En attente"
+        },
+        "ERRORS": {
+            "CANNOT_READ_FOLDER": "Impossible d'ouvrir '{{folder}}': fichier ou dossier introuvable",
+            "ENOTFOUND": "Serveur introuvable: vérifier le nom d'hôte",
+            "ECONNREFUSED": "Connexion refusée par le serveur",
+            "ENOENT": "Dossier ou fichier introuvable",
+            "EPERM": "Vous n'avez pas la permission d'effectuer cette action",
+            "EIO": "Le transfert a été interrompu",
+            "EACCES": "Accès refusé",
+            "ENOSPC": "le disque est plein",
+            "EHOSTDOWN": "Houston, on a un problème: il n'y a plus d'internet :(",
+            "530": "Echec de l'authentification",
+            "550": "Fichier non disponible, introuvable ou non accessible.",
+            "ENOTDIR": "Le chemin entré ne pointe pas vers un dossier",
+            "EROS": "Le périphérique n'autorise pas l'écriture.",
+            "UNKNOWN": "Une erreur est survenue",
+            "GENERIC": "{{error.message}} (code {{error.code}})",
+            "BAD_FILENAME": "Nom de fichier ou dossier non valide: '{{entry}}'",
+            "WIN_VALID_FILENAME": "Tous les caractères sauf *:<>\\?|\" sont acceptés",
+            "UNIX_VALID_FILENAME": "Tous les caractères sauf / sont acceptés",
+            "DELETE": "Erreur lors de la suppression des fichiers: {{message}}",
+            "DELETE_WARN": "Certains fichiers n'ont pu être supprimés",
+            "CREATE_FOLDER": "Erreur lors de la création du dossier: {{message}}",
+            "EEXIST": "Un fichier avec ce nom existe déjà",
+            "NODEST": "la destination de la copie n'est pas accessible",
+            "COPY_ERROR": "La copie n'a pu s'effectuer: {{message}}",
+            "COPY_UNKNOWN_ERROR": "Impossible de copier les fichiers demandés.",
+            "SHELL_OPEN_FAILED": "Impossible d'ouvrir le fichier: aucune application connue pour l'ouvrir.",
+            "OPEN_TERMINAL_FAILED": "Impossible d'ouvrir le terminal. Vérifiez le chemin du terminal dans les paramètres."
+        },
+        "MAIN_PROCESS": {
+            "PRESS_TO_EXIT": "Maintenez la touche ⌘Q enfoncée pour quitter"
+        },
+        "FAVORITES_PANEL": {
+            "SHORTCUTS": "Raccourcis",
+            "PLACES": "Emplacements",
+            "LINUX": "Linux",
+            "DOWNLOADS_DIR": "Téléchargements",
+            "MUSIC_DIR": "Musique",
+            "PICTURES_DIR": "Images",
+            "DESKTOP_DIR": "Bureau",
+            "VIDEOS_DIR": "Vidéos",
+            "DOCS_DIR": "Documents"
+        },
+        "APP_MENUS": {
+            "ABOUT": "À propos de React-Explorer",
+            "PREFS": "Préférences",
+            "EXIT": "Quitter React-Explorer",
+            "TITLE_FILE": "Fichier",
+            "TITLE_EDIT": "Editer",
+            "TITLE_VIEW": "Vue",
+            "TITLE_HELP": "Aide",
+            "TITLE_GO": "Aller",
+            "TITLE_WINDOW": "Fenêtre",
+            "MAKEDIR": "Nouveau Dossier",
+            "DELETE": "Supprimer",
+            "RENAME": "Renommer",
+            "OPEN_TERMINAL": "Ouvrir un Terminal",
+            "COPY": "Copier",
+            "CUT": "Couper",
+            "SELECT_ALL": "Tout Sélectionner",
+            "COPY_PATH": "Copier Chemin",
+            "COPY_FILENAMES": "Copier Nom Fichier",
+            "PASTE": "Coller",
+            "RELOAD_VIEW": "Recharger Vue Active",
+            "FORCE_RELOAD_APP": "Recharger l'App",
+            "KEYBOARD_SHORTCUTS": "Liste des Raccourcis",
+            "ABOUT_TITLE": "React-Explorer",
+            "ABOUT_CONTENT": "Version: ${version}\nCommit: ${hash}\nDate: ${date}\nElectron: ${electron}\nChrome: ${chrome}\nNode: ${node}\nSE: ${platform} ${arch} ${release}",
+            "ZOOM": "Zoom",
+            "MINIMIZE": "Réduire",
+            "SELECT_NEXT_TAB": "Sélectionner l'onglet suivant",
+            "SELECT_PREVIOUS_TAB": "Sélectionner l'onglet précédent",
+            "NEW_TAB": "Nouvel onglet",
+            "CLOSE_TAB": "Fermer l'onglet",
+            "OK": "OK",
+            "TOGGLE_SPLITVIEW": "Activer/Désactiver Vue Double",
+            "GO_PARENT": "Dossier parent",
+            "GO_BACK": "Précédent",
+            "GO_FORWARD": "Suivant",
+            "TOGGLE_HIDDEN_FILES": "Voir/Cacher Fichiers Cachés",
+            "TOGGLE_ICONVIEW_MODE": "Par icônes",
+            "TOGGLE_TABLEVIEW_MODE": "Par liste",
+            "SORT_BY": "Trier par",
+            "SORT_BY_NAME": "Nom",
+            "SORT_BY_SIZE": "Taille",
+            "SORT_ASCENDING": "Croissant",
+            "SORT_DESCENDING": "Décroissant"
+        }
+    }
+}
