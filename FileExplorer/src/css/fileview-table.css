@@ -1,0 +1,180 @@
+.fileListSizerWrapper {
+    display:flex;
+    flex-direction: column;
+    flex-grow:1;
+    position:relative;
+    overflow: auto;
+    font-size: 90%;
+}
+
+.fileListSizerWrapper .empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    color: rgba(92, 112, 128, 0.5);
+}
+
+.fileListSizerWrapper .empty .bp4-icon {
+    margin: 10px auto;
+}
+
+.bp4-dark .fileListSizerWrapper .empty {
+    color:rgba(255, 255, 255, 0.47);
+}
+
+.bp4-dark .fileListSizerWrapper .empty .bp4-icon {
+    color:rgba(92, 112, 128, 0.5);
+}
+
+.tableRow {
+    align-items: center;
+    display: flex;
+}
+
+.tableRow .size {
+    margin-right: 10px;
+    text-align:right;
+    flex-shrink: 0;
+}
+
+.tableRow .name {
+    display:flex;
+    height: 100%;
+    align-items: center;
+    margin-left: 10px;
+    flex-grow: 1;
+    flex-shrink: 1;
+    overflow: hidden;
+}
+
+.tableRow .file-label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    white-space: pre;
+    text-overflow: ellipsis;
+    line-height: 28px;
+}
+
+.tableRow.isHidden {
+    opacity:.8;
+}
+
+/* theme-releated */
+.tableRow:hover {
+    background-color: rgba(191, 204, 214, 0.4);
+}
+
+.tableRow.selected {
+    background-color: #8A9BA8;
+}
+
+.sideview.active .tableRow.selected {
+    background-color:#137cbd;
+}
+
+.tableRow .bp4-icon {
+    margin-right:7px;
+    color:#5c7080;
+}
+
+.tableRow.isSymlink:after {
+    content:'';
+    position:absolute;
+    bottom:4px;
+    left:6px;
+    background:transparent url(../../img/link.png) no-repeat;
+    background-color:white;
+    background-size:100% 100%;
+    width:10px;
+    height:10px;
+    border:1px solid rgba(0,0,0,.4);
+}
+
+.tableRow.selected, .tableRow.selected .bp4-icon {
+    color:#fff;
+}
+
+.tableRow.error,
+.tableRow.error .bp4-icon,
+body.bp4-dark .tableRow.error .bp4-icon {
+    color: rgb(160, 43, 43);
+}
+
+/* dark theme */
+body.bp4-dark .tableRow:hover {
+    background-color:rgba(92, 112, 128, 0.3);
+}
+
+body.bp4-dark .tableRow.selected {
+    background-color: rgb(88, 100, 109);
+}
+
+body.bp4-dark .sideview.active .tableRow.selected {
+    background-color: #137cbd;
+}
+
+body.bp4-dark .tableRow .bp4-icon {
+    color:#f5f8fa;
+}
+
+/* header stuff */
+.headerRow {
+    -webkit-box-shadow: inset 0 -1px 0 rgba(16, 22, 26, 0.1);
+    box-shadow: inset 0 -1px 0 rgba(16, 22, 26, 0.1);
+    background-color:rgb(231, 236, 239);
+    border-right: 1px solid rgba(16, 22, 26, 0.2);
+    color: #182026;
+    font-weight:normal;
+    text-transform:none;
+}
+
+.tableHeader .resizeHandle, .tableHeader .sort {
+    color:#ABAFB3;
+}
+
+.tableHeader {
+    display:flex;
+    z-index: 1;
+    width: 100%;
+    align-items: center;
+}
+
+.tableHeader > div {
+    padding: 0 8px;
+}
+
+.tableHeader > div:first-child {
+    flex-grow: 1;
+    display: flex;
+}
+
+.tableHeader > div:first-child > span:first-child {
+    flex-grow: 1;
+}
+
+.tableHeader:last-child {
+    border:none;
+}
+
+.bp4-dark .headerRow {
+    background-color:rgb(66, 84, 97);
+    color:#BFCCD6;
+}
+
+.tableHeader .sort {
+    align-self:flex-end;
+    font-family:verdana;
+}
+
+.tableHeader .sort.desc {
+    align-self:flex-start;    
+    transform:rotateX(180deg);
+}
+
+.bp4-dark .tableHeader .resizeHandle, .bp4-dark .tableHeader .sort {
+    color: rgba(163, 188, 207, 0.589);
+}

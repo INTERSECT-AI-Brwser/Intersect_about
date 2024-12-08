@@ -1,0 +1,861 @@
+body {
+    margin:0;
+    overflow:hidden;
+    height:100vh;
+    user-select: none;
+    //background-image: url('/Users/abhasoli/Downloads/react-explorer-1/src/components/Screen Shot 2024-10-03 at 6.22.01 PM.png'); 
+    background-size: cover;  
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+body.bp4-dark {
+    background-color: #293742;
+    color: #f5f8fa;
+    background-image: url('/Users/abhasoli/Downloads/react-explorer-1/src/components/Screen Shot 2024-10-03 at 6.22.01 PM.png'); /* image for dark theme */
+
+}
+
+button.small.bp4-minimal{
+    transform:scale(.8);
+    opacity:.6;
+}
+
+button.small:hover{
+    opacity:1;
+}
+
+.bp4-tree-node-caret-none{
+    min-width:10px;
+}
+
+.bp4-control-group.toolbar{
+    z-index:1;
+    margin-top: 40px; 
+    padding: 5px 10px; 
+}
+
+/* needed to make the pathbar full-width */
+.toolbar > .bp4-popover2-target {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+/* auto resize layout */
+.filelist, .sideview{
+    display:flex;
+    flex-direction:column;
+    flex-grow:1;
+}
+
+.sideview > .bp4-control-group {
+    flex-shrink: 0;
+    user-select: none;
+    -webkit-user-select: none;
+}
+.sideview > .bp4-control-group > :first-child,
+.sideview > .bp4-control-group > :last-child {
+    border-radius:0;
+}
+
+.main > .hidden{
+    display:none;
+    pointer-events: none;
+}
+
+#reload{
+    position:absolute;
+    opacity:.3;
+    right:0;
+    top:0;
+}
+
+#root{
+    display: flex;
+    flex-direction: column;
+    height:100%;
+}
+
+#root .main{
+    display:flex;
+    justify-content: center;
+    flex-grow:1;
+    overflow:hidden;
+    /* padding:10px; */
+    margin-top: 0;
+}
+
+#root .sideview {
+    position:relative;
+    width:calc((100% - 200px) / 2);
+    flex-grow:1;
+}
+
+#root .singleView .sideview {
+    width:calc(100% - 200px);
+}
+
+#root .sideview {
+    border-left: 1px solid rgb(189, 195, 199);
+}
+
+#root .dualView #view_0.inactive {
+    border-right-color:transparent;
+}
+
+#root .dualView #view_0.active {
+    border-left-color:transparent;
+}
+
+#root .dualView #view_1.inactive{
+    border-left-color: rgb(131, 135, 138);
+}
+
+#root .darwin.dualView #view_1.active:before {
+    border-bottom-right-radius: 5px;
+}
+
+#root .dualView .sideview:before{
+    position: absolute;
+    pointer-events:none;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: -1px;
+    content: "";
+    opacity: .6;
+    z-index: 9;
+    border: 1px solid rgb(189, 195, 199);
+    border-top:none;
+    border-bottom:none;
+}
+
+#root .dualView .sideview.active:before {
+    /*opacity:1;
+    border: 2px solid rgba(19, 124, 189, .9);*/
+
+    opacity: 0; /* Making it invisible */
+    border: none; /* Removing the border */
+}
+
+#root .dualView .sideview.inactive:before{
+    border-left:none;
+}
+
+/* dark theme */
+.bp4-dark #root .singleView .sideview {
+    border-left: 1px solid rgb(14,25,34);
+}
+
+.bp4-dark #root .sideview,
+.bp4-dark #root .dualView #view_1.inactive {
+    border-color: rgb(14,25,34);
+}
+
+.bp4-dark #root .dualView .sideview.inactive:before {
+    border-color: rgb(73, 75, 76);
+}
+
+#root .sideview.dropTarget:before {
+    box-shadow: 0 0 4px 2px inset #00b63ddb;
+}
+
+#root .sideview.notDropTarget{
+    cursor:no-drop;
+}
+
+#root .sideview.notDropTarget:before {
+    box-shadow: 0 0 4px 2px inset #b6000982;
+}
+
+#root .sideview:first-child{
+    margin-right:10px;
+}
+
+#root .singleView .sideview:first-child{
+    margin-right:0;
+}
+
+.bp4-input-group{
+    flex-grow:1;
+}
+
+.bp4-popover-wrapper{
+    flex-grow:1;
+}
+
+.bp4-popover-wrapper .bp4-popover-target{
+    width:100%;
+}
+
+.bp4-navbar .title-group .bp4-intent-primary{
+    pointer-events:none;
+}
+
+.downloads{
+    overflow:auto;
+    width: auto;
+    flex-grow:1;
+}
+
+.downloads.empty{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    align-self: center;
+}
+
+.downloads.empty .bp4-icon{
+    padding: 20px 12px;
+    border: 3px dashed #d9dde0;
+    border-radius:8px;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+.downloads.empty .bp4-icon svg{
+    display:inline;
+}
+
+.downloads .bp4-tree-node-content .action{
+    vertical-align:text-bottom;
+    opacity: .5;
+    cursor:pointer;    
+}
+
+.downloads .bp4-tree-node-content:hover .action{
+    opacity: 1;
+}
+
+/* line height bug ? */
+.bp4-tree-node-caret > span{
+    vertical-align:top;
+}
+/*
+#root .bp4-navbar {
+    border-bottom: 1px solid rgb(189, 195, 199);
+    background: rgb(246,246,246);
+    background: linear-gradient(180deg, rgba(246,246,246,1) 16%, rgba(230,236,239,1) 100%);
+    box-shadow:none;
+}
+
+.bp4-dark #root .bp4-navbar {
+    border-bottom: 1px solid rgb(14,25,34);
+    background: rgb(46,46,46);
+    background: linear-gradient(180deg, rgba(56,56,56,1) 16%, rgba(40,56,69,1) 100%);
+}
+
+.bp4-navbar .download .bp4-button-text{
+    display: flex;
+    align-items: center;
+}
+*/
+
+.bp4-navbar {
+    display: none!important;
+}
+.app-badge{
+    display: inline-block;
+    margin-left: 10px;
+    position: relative;
+}
+
+.app-badge .bp4-spinner svg {
+    stroke-width: 10;
+}
+
+.app-badge-content{
+    position: absolute;
+    left: 0;
+    color: #106ba3;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 19px;
+    right: 0;
+    text-align: center;
+}
+
+.bp4-dark .app-badge-content {
+    color: #48aff0;
+}
+
+.app-badge .bp4-spinner{
+    display:inline-block;
+}
+
+.app-badge.bp4-intent-success{
+    background-color:#0d8050;
+}
+
+.app-badge.bp4-intent-danger{
+    background-color:#c23030;
+}
+
+.app-badge.bp4-intent-primary{
+    background-color:#106ba3;
+}
+
+.app-badge.bp4-intent-warning{
+    background-color:#bf7326;
+}
+
+.bp4-dark .app-badge.bp4-intent-success{
+    background-color:#0f9960;
+}
+
+.bp4-dark .app-badge.bp4-intent-danger{
+    background-color:#db3737;
+}
+
+.bp4-dark .app-badge.bp4-intent-primary{
+    background-color:#137cbd;
+}
+
+.bp4-dark .app-badge.bp4-intent-warning{
+    background-color:#d9822b;
+}
+
+/* app loader */
+.app-loader{
+    opacity:0;
+    pointer-events:none;
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.app-loader.active{
+    opacity:1;
+    pointer-events:all;
+    background-color: rgba(255,255,255,.9);
+}
+
+body.bp4-dark .app-loader.active{
+    background-color:rgba(41, 55, 66, 0.9);
+}
+
+.app-loader > * {
+    /* flex-grow: 1; */
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 800ms;
+}
+
+.app-loader.active > *{
+    opacity: 1;
+}
+
+/* label allighment */
+.bp4-dialog-body label.bp4-label {
+    width: 28%;
+    text-align: right;
+}
+
+/* special case for makedir*/
+.makedirDialog label.bp4-label{
+    width:auto;
+}
+
+/* login dialog */
+.loginDialog .error{
+    text-align:center;
+    color:white;
+    padding:15px;
+    margin:10px 30px 40px 30px;
+    border-radius:3px;
+    border:1px solid rgba(16,22,26,.2);
+}
+/*
+.status-bar {
+    background: rgba(206, 217, 224, 0.5);
+    border-top: 1px solid rgb(189, 195, 199);
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.bp4-dark .status-bar {
+    background-color:rgb(41, 56, 66);
+    border-top: 1px solid rgb(14,25,34);
+}
+*/
+.tablist{
+    z-index:0;
+}
+
+.tablist button{
+    border-bottom-left-radius:0;
+    cursor:default;
+}
+
+.tablist .bp4-button.tab > * {
+    margin-right:0;
+}
+
+.tablist .bp4-button .bp4-icon.folder{
+    padding: 0 10px;
+    margin:0;
+    opacity:.9;
+}
+
+.tablist button:last-child{
+    opacity:.3;
+}
+
+.tablist button:last-child:hover{
+    opacity:1;
+}
+
+.tablist .closetab{
+    opacity:0;
+}
+
+.tablist .bp4-button:hover .closetab{
+    opacity:1;
+}
+
+.tablist .addtab:hover, .bp4-dark .bp4-button.addtab:hover{
+    background:transparent;
+}
+
+.tablist.bp4-button-group.bp4-fill .bp4-button:not(.bp4-fixed) {
+    width:13rem;
+    flex-grow:0;
+}
+
+.tablist.bp4-button-group.bp4-fill .addtab:not(.bp4-fixed){
+    width:auto;
+    flex-grow:0;
+}
+
+.tablist .bp4-button .bp4-button-text{
+    flex-grow: 1;
+    text-align: center;
+}
+
+.sideview:not(.active) .tablist .bp4-intent-primary{
+    background-color: #8A9BA8;
+}
+
+.bp4-dark .sideview:not(.active) .tablist .bp4-intent-primary{
+    background-color: rgb(88, 100, 109);
+}
+
+.sideview > .toolbar > .bp4-button-group > .bp4-button:not([class*="bp4-intent-"]) {
+    box-shadow: inset 0 0 0 1px rgba(16, 22, 26, 0.2), inset 0 -1px 0 rgba(16, 22, 26, 0.1);
+}
+
+.sideview > .toolbar > .bp4-button-group > .bp4-button:first-child:not([class*="bp4-intent-"]) {
+    margin-left:-1px;
+}
+
+.sideview > .toolbar > .bp4-button-group > .bp4-button:last-child:not([class*="bp4-intent-"]) {
+    box-shadow:inset 0 -1px 0 rgba(16, 22, 26, 0.1);
+}
+
+.tablist .bp4-button .bp4-button-text{
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow:ellipsis;
+}
+
+.tablist-wrapper{
+    position: relative;
+    padding-right: 30px;
+}
+
+.tablist-wrapper .addtab{
+    position:absolute;
+    right:0;
+    top:0;
+}
+
+/* intent colors on any span */
+span.bp4-intent-success{
+    color:#0d8050;
+}
+
+span.bp4-intent-danger{
+    color:#c23030;
+}
+
+span.bp4-intent-primary{
+    color:#106ba3;
+}
+
+span.bp4-intent-warning{
+    color:#bf7326;
+}
+
+.bp4-dark span.bp4-intent-success{
+    color:#0f9960;
+}
+
+.bp4-dark span.bp4-intent-danger{
+    color:#db3737;
+}
+
+.bp4-dark span.bp4-intent-primary{
+    color:#137cbd;
+}
+
+.bp4-dark span.bp4-intent-warning{
+    color:#d9822b;
+}
+
+/* patch for linux/win dialogs that may show scrollbar */
+.bp4-overlay-inline .bp4-overlay-content,
+.bp4-overlay-scroll-container .bp4-overlay-content{
+    max-height:100%;
+}
+
+.bp4-portal .bp4-overlay.bp4-overlay-scroll-container{
+    overflow:hidden;
+}
+
+.bp4-navbar {
+    display: none !important;
+} /* temp removing the fav tab */
+
+/*.favoritesPanel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2px;
+    background-color: #3b8ec6;
+    border-bottom: 1px solid #87c2ee;
+    background-color: transparent !important;
+    border-bottom: none !important;
+
+    /*background-color: rgba(59, 142, 198, 0.7);  Semi-transparent blue 
+    border-bottom: 1px solid #87c2ee;*/
+    z-index: 1; /* Ensure it's above other elements 
+}
+*/
+
+.favoritesPanel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(245, 248, 250, 0.5); /* Semi-transparent background */
+    border-bottom: 1px solid rgba(216, 225, 232, 0.5); /* Semi-transparent border */
+    backdrop-filter: blur(5px); /* blur effect not working */
+}
+
+.bp4-dark .favoritesPanel {
+    background-color: rgba(41, 55, 66, 0.8);
+    border-bottom: 1px solid rgba(14, 25, 34, 0.5);
+}
+.bp4-dark .favoritesPanel {
+    background-color: rgba(41, 55, 66, 0.8); /* Semi-transparent dark background */
+    border-bottom: 1px solid rgba(14, 25, 34, 0.5);
+}
+
+.shortcut-item {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 3px;
+    transition: background-color 0.2s ease;
+}
+
+.shortcut-item:hover {
+    background-color: #e1e8ed;
+}
+
+.shortcut-item .bp4-icon {
+    margin-right: 5px;
+}
+
+.shortcut-item {
+    display: flex;
+    align-items: center;
+    margin-right: 12px;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 20px; /* rounded butttons */
+    transition: all 0.2s ease;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.shortcut-item:hover {
+    background-color: rgba(225, 232, 237, 0.5);
+    transform: translateY(-2px);
+}
+
+.bp4-dark .shortcut-item {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.bp4-dark .shortcut-item:hover {
+    background-color: rgba(70, 80, 90, 0.5);
+}
+
+.shortcut-item .bp4-icon {
+    margin-right: 8px;
+}
+
+.shortcut-item .bp4-icon {
+    padding: 6px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.shortcut-item:hover .bp4-icon {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.bp4-dark .shortcut-item .bp4-icon {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.bp4-dark .shortcut-item:hover .bp4-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.shortcut-item {
+    color: #182026;
+}
+
+.bp4-dark .shortcut-item {
+    color: #f5f8fa;
+}
+
+.shortcut-item {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 12px;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.shortcut-item:hover {
+    background-color: rgba(225, 232, 237, 0.5);
+    transform: translateY(-2px);
+    
+}
+
+.bp4-dark .shortcut-item {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.bp4-dark .shortcut-item:hover {
+    background-color: rgba(70, 80, 90, 0.5);
+}
+
+.shortcut-item .bp4-icon {
+    margin-right: 8px;
+}
+
+#root.main {
+    padding-top: 60px; /* height of the navbar */
+}
+
+.shortcut-item .bp4-icon {
+    padding: 4px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.shortcut-item:hover .bp4-icon {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.bp4-dark .shortcut-item .bp4-icon {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.bp4-dark .shortcut-item:hover .bp4-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.tablist,
+.tablist-wrapper,
+.tablist-wrapper.addtab {
+    display: none !important;
+}
+
+.tablist button,
+.tablist.bp4-button.tab > *,
+.tablist.bp4-button.bp4-icon.folder,
+.tablist.closetab,
+.tablist.addtab:hover,
+.bp4-dark .bp4-button.addtab:hover {
+    display: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.favoritesPanel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    background-color: transparent; /* Remove background color */
+    border-bottom: none; /* Remove bottom border */
+    backdrop-filter: none; /* Remove blur effect */
+}
+
+.shortcut-item {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 15px;
+    cursor: pointer;
+    padding: 0; /* Remove padding */
+    border-radius: 0; /* Remove border radius */
+    transition: none; /* Remove transition */
+    background-color: transparent; /* Remove background color */
+    color: inherit; /* Inheriting color*/
+}
+
+.shortcut-item:hover {
+    background-color: transparent; /* Remove hover background */
+    transform: none; /* Remove hover transform */
+}
+
+.shortcut-item .bp4-icon {
+    margin-right: 5px;
+    padding: 0; /* Remove padding */
+    background-color: transparent; /* Remove background color */
+    border-radius: 0; /* Remove border radius */
+}
+
+.shortcut-item:hover .bp4-icon {
+    background-color: transparent; /* Remove hover background */
+}
+
+/* Add line below text */
+.shortcut-item::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: currentColor; /* Use current text color for the line */
+    margin-top: 2px; /* Space between text and line */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.2s ease; /* Smooth transition for the line */
+}
+
+.shortcut-item:hover::after {
+    opacity: 1; /* Show line on hover */
+}
+
+/* Dark theme adjustments */
+.bp4-dark .favoritesPanel {
+    background-color: transparent;
+    border-bottom: none;
+}
+
+.bp4-dark .shortcut-item,
+.bp4-dark .shortcut-item:hover,
+.bp4-dark .shortcut-item .bp4-icon,
+.bp4-dark .shortcut-item:hover .bp4-icon {
+    background-color: transparent;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.shortcut-item {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 15px;
+    cursor: pointer;
+    padding: 5px 0; /* Add some vertical padding */
+    color: inherit;
+    position: relative; /* Add this for absolute positioning of the line */
+    transition: color 0.2s ease; /* Smooth color transition on hover */
+}
+
+.shortcut-item:hover {
+    color: #106ba3; /* Change color on hover  */
+}
+
+.shortcut-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px; /* Slightly thicker line */
+    background-color: currentColor;
+    transform: scaleX(0); /* Start with no width */
+    transition: transform 0.2s ease; /* Smooth transition for line appearance */
+}
+
+.shortcut-item:hover::after {
+    transform: scaleX(1); /* Expand to full width on hover */
+}
+
+/* Adjustments for dark theme */
+.bp4-dark .shortcut-item:hover {
+    color: #48aff0; /* Lighter color for dark theme hover */
+}
